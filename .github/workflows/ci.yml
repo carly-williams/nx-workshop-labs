@@ -9,11 +9,11 @@ jobs:
     steps: # what steps it will perform
       - uses: actions/checkout@v1 # checkout whatever branch the PR is using
       - uses: bahmutov/npm-install@v1 # trigger an `npm install`
-      - run: npm run nx test store # test the "store" project
+      - run: npm run npx nx test store # test the "store" project
   test-api: 
     runs-on: ubuntu-latest 
     name: Test API
     steps: 
       - uses: actions/checkout@v1
       - uses: bahmutov/npm-install@v1
-      - run: npm run nx test api
+      - run: npm run npx nx test api
