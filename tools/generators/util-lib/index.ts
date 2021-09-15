@@ -41,14 +41,14 @@ import { libraryGenerator } from '@nrwl/workspace/generators';
 
 interface Schema {
   name: string;
-  directory: 'store' | 'api' | 'shared';
+  directory: 'api' | 'store' | 'shared' | 'apps/video-games';
 }
 
-export default async function(host: Tree, schema: Schema) {
+export default async function (host: Tree, schema: Schema) {
   await libraryGenerator(host, {
     name: `util-${schema.name}`,
     directory: schema.directory,
-    tags: `type:util, scope:${schema.directory}`
+    tags: `type:util, scope:${schema.directory}`,
   });
   await formatFiles(host);
   return () => {
